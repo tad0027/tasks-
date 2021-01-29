@@ -1,0 +1,372 @@
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> library(swirl)
+
+| Hi! I see that you have some variables saved in your workspace. To keep
+| things running smoothly, I recommend you clean up before starting swirl.
+
+| Type ls() to see a list of the variables in your workspace. Then, type
+| rm(list=ls()) to clear your workspace.
+
+| Type swirl() when you are ready to begin.
+
+> 
+> swirl()
+
+| Welcome to swirl! Please sign in. If you've been here before, use the same
+| name as you did then. If you are new, call yourself something unique.
+
+What shall I call you? Timmy Daniels 
+
+| Would you like to continue with one of these lessons?
+
+1: R Programming Functions
+2: No. Let me start something new.
+
+Selection: 1
+
+
+
+| Make sure to save your script before you type submit().
+
+> submit()
+
+| Sourcing your script...
+
+
+| Great job!
+
+  |                                                                              |=======================================                               |  55%
+| Let's take your new evaluate() function for a spin! Use evaluate to find the
+| standard deviation of the vector c(1.4, 3.6, 7.9, 8.8).
+
+> evaluate(sd, c(1.4, 3.6, 7.9, 8.8))
+[1] 3.514138
+
+| That's correct!
+
+  |                                                                              |========================================                              |  57%
+| The idea of passing functions as arguments to other functions is an important
+| and fundamental concept in programming.
+
+...
+
+  |                                                                              |=========================================                             |  59%
+| You may be surprised to learn that you can pass a function as an argument
+| without first defining the passed function. Functions that are not named are
+| appropriately known as anonymous functions.
+
+...
+
+  |                                                                              |===========================================                           |  61%
+| Let's use the evaluate function to explore how anonymous functions work. For
+| the first argument of the evaluate function we're going to write a tiny
+| function that fits on one line. In the second argument we'll pass some data
+| to the tiny anonymous function in the first argument.
+
+...
+
+  |                                                                              |============================================                          |  63%
+| Type the following command and then we'll discuss how it works:
+| evaluate(function(x){x+1}, 6)
+
+> evaluate(function(x){x+1}, 6)
+[1] 7
+
+| You are amazing!
+
+  |                                                                              |==============================================                        |  65%
+| The first argument is a tiny anonymous function that takes one argument `x`
+| and returns `x+1`. We passed the number 6 into this function so the entire
+| expression evaluates to 7.
+
+...
+
+  |                                                                              |===============================================                       |  67%
+| Try using evaluate() along with an anonymous function to return the first
+| element of the vector c(8, 4, 0). Your anonymous function should only take
+| one argument which should be a variable `x`.
+
+> evaluate(function(x){x[1]}, c(8, 4, 0))
+[1] 8
+
+| You are amazing!
+
+  |                                                                              |=================================================                     |  69%
+| Now try using evaluate() along with an anonymous function to return the last
+| element of the vector c(8, 4, 0). Your anonymous function should only take
+| one argument which should be a variable `x`.
+
+> test_eval3()
+Error in test_eval3() : could not find function "test_eval3"
+> evaluate(function(x){x[length(x)]}, c(8, 4, 0))
+[1] 0
+
+| You got it right!
+
+  |                                                                              |==================================================                    |  71%
+| For the rest of the course we're going to use the paste() function
+| frequently. Type ?paste so we can take a look at the documentation for the
+| paste function.
+
+> ?paste
+starting httpd help server ... done
+
+| Great job!
+
+  |                                                                              |===================================================                   |  73%
+| As you can see the first argument of paste() is `...` which is referred to as
+| an ellipsis or simply dot-dot-dot. The ellipsis allows an indefinite number
+| of arguments to be passed into a function. In the case of paste() any number
+| of strings can be passed as arguments and paste() will return all of the
+| strings combined into one string.
+
+...
+
+  |                                                                              |=====================================================                 |  76%
+| Just to see how paste() works, type paste("Programming", "is", "fun!")
+
+>  paste("Programming", "is", "fun!")
+[1] "Programming is fun!"
+
+| You're the best!
+
+  |                                                                              |======================================================                |  78%
+| Time to write our own modified version of paste().
+
+...
+
+  |                                                                              |========================================================              |  80%
+| Make sure to save your script before you type submit().
+
+> submit()
+
+| Sourcing your script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  C:\Users\TIMMYD~1\AppData\Local\Temp\RtmpUHfx5K/telegram.R:34:21: unexpected symbol
+33: telegram <- function(...){
+34: paste("start, ..., "stop
+                        ^
+
+| Not quite right, but keep trying.
+
+| Remember that arguments can come after ...
+
+> submit()
+
+| Sourcing your script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  C:\Users\TIMMYD~1\AppData\Local\Temp\RtmpUHfx5K/telegram.R:34:21: unexpected symbol
+33: telegram <- function(...){
+34: paste("start, ..., "stop
+                        ^
+
+| Not quite right, but keep trying.
+
+| Remember that arguments can come after ...
+
+> submit()
+
+| Sourcing your script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  C:\Users\TIMMYD~1\AppData\Local\Temp\RtmpUHfx5K/telegram.R:34:21: unexpected symbol
+33: telegram <- function(...){
+34: paste("start, ..., "STOP
+                        ^
+
+| One more time. You can do it!
+
+| Remember that arguments can come after ...
+
+> submit()
+
+| Sourcing your script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  C:\Users\TIMMYD~1\AppData\Local\Temp\RtmpUHfx5K/telegram.R:34:21: unexpected symbol
+33: telegram <- function(...){
+34: paste("START, ..., "STOP
+                        ^
+
+| One more time. You can do it!
+
+| Remember that arguments can come after ...
+
+> submit()
+
+| Sourcing your script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  C:\Users\TIMMYD~1\AppData\Local\Temp\RtmpUHfx5K/telegram.R:34:21: unexpected symbol
+33: telegram <- function(...){
+34: paste("START, ..., "STOP
+                        ^
+
+| Give it another try.
+
+| Remember that arguments can come after ...
+
+> submit()
+
+| Sourcing your script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  C:\Users\TIMMYD~1\AppData\Local\Temp\RtmpUHfx5K/telegram.R:34:21: unexpected symbol
+33: telegram <- function(...){
+34: paste("START, ..., "STOP
+                        ^
+
+| You almost had it, but not quite. Try again.
+
+| Remember that arguments can come after ...
+
+> submit()
+
+| Sourcing your script...
+
+
+| Keep up the great work!
+
+  |                                                                              |=========================================================             |  82%
+| Now let's test out your telegram function. Use your new telegram function
+| passing in whatever arguments you wish!
+
+> telegram()
+[1] "START STOP"
+
+| You are doing so well!
+
+  |                                                                              |===========================================================           |  84%
+| Make sure to save your script before you type submit().
+
+> submit()
+
+| Sourcing your script...
+
+
+| Give it another try.
+
+| Your function should have three sections: capture the ellipsis in a list(),
+| unpack the arguments from the ellipsis and assign them to variables, then
+| pass those variables to paste().
+
+> submit()
+
+| Sourcing your script...
+
+
+| All that practice is paying off!
+
+  |                                                                              |============================================================          |  86%
+| Time to use your mad_libs function. Make sure to name the place, adjective,
+| and noun arguments in order for your function to work.
+
+> mad_libs(adjective = "", place = "", noun = "")
+[1] "News from  today where  students took to the streets in protest of the new  being installed on campus."
+
+| All that practice is paying off!
+
+  |                                                                              |=============================================================         |  88%
+| We're coming to the end of this lesson, but there's still one more idea you
+| should be made aware of.
+
+...
+
+  |                                                                              |===============================================================       |  90%
+| You're familiar with adding, subtracting, multiplying, and dividing numbers
+| in R. To do this you use the +, -, *, and / symbols. These symbols are called
+| binary operators because they take two inputs, an input from the left and an
+| input from the right.
+
+...
+
+  |                                                                              |================================================================      |  92%
+| In R you can define your own binary operators. In the next script I'll show
+| you how.
+
+...
+
+  |                                                                              |==================================================================    |  94%
+| Make sure to save your script before you type submit().
+
+> submit()
+
+| Sourcing your script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  C:\Users\TIMMYD~1\AppData\Local\Temp\RtmpUHfx5K/bin_op.R:33:0: unexpected end of input
+31: 
+32: 
+   ^
+
+| Try again. Getting it right on the first try is boring anyway!
+
+| Remember: 'Hello' %p% 'student!' is how you use the binary operator.
+
+> submit()
+
+| Sourcing your script...
+
+
+| Give it another try.
+
+| Remember: 'Hello' %p% 'student!' is how you use the binary operator.
+
+> submit()
+
+| Sourcing your script...
+
+
+| That's a job well done!
+
+  |                                                                              |===================================================================   |  96%
+| You made your own binary operator! Let's test it out. Paste together the
+| strings: 'I', 'love', 'R!' using your new binary operator.
+
+>  "'I' %p% 'love' %p% 'R!'"
+[1] "'I' %p% 'love' %p% 'R!'"
+
+| You're close...I can feel it! Try it again. Or, type info() for more options.
+
+| Use %p% in between each string.
+
+> 'I' %p% 'love' %p% 'R!'
+[1] "I love R!"
+
+| You're the best!
+
+  |                                                                              |===================================================================== |  98%
+| We've come to the end of our lesson! Go out there and write some great
+| functions!
+
+...
+
+  |                                                                              |======================================================================| 100%
+| Would you like to receive credit for completing this course on Coursera.org?
+
+1: Yes
+2: No
+
+Selection: 
